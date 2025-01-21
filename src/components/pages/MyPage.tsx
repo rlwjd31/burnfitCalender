@@ -1,22 +1,15 @@
 import React from 'react';
 
-import {StyleSheet, Text, View} from 'react-native';
+import {Text, View} from 'react-native';
 import Layout from '../../Layout';
+import defaultStyles from '../../styles/defaultStyles.style';
 
 export default function MyPage() {
   return (
     <Layout>
-      <View style={styles.center}>
+      <View style={defaultStyles.center}>
         <Text>MyPage</Text>
       </View>
     </Layout>
   );
 }
-
-const styles = StyleSheet.create({
-  center: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100%',
-  },
-});

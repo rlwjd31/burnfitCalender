@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {ReactNode} from 'react';
-import {SafeAreaView, StyleSheet, View} from 'react-native';
+import {SafeAreaView, View} from 'react-native';
 import defaultStyles from './styles/defaultStyles.style';
 
 type LayoutProps = {
@@ -10,15 +10,9 @@ type LayoutProps = {
 
 export default function Layout({children}: LayoutProps) {
   return (
-    <SafeAreaView style={styles.mainContainer}>
+    <SafeAreaView style={defaultStyles.mainContainer}>
       <View>{children}</View>
     </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  mainContainer: {
-    flex: 1,
-    padding: 16,
-  },
-});
