@@ -13,7 +13,11 @@ const Tab = createBottomTabNavigator();
 function App(): React.JSX.Element {
   return (
     <NavigationContainer>
-      <Tab.Navigator initialRouteName="Home">
+      <Tab.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+          headerShown: false
+        }}>
         <Tab.Screen name={ROUTES.HOME} component={HomePage} />
         <Tab.Screen name={ROUTES.CALENDER} component={CalendarPage} />
         <Tab.Screen name={ROUTES.LIBRARY} component={LibraryPage} />
