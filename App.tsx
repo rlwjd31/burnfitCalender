@@ -25,6 +25,7 @@ function App(): React.JSX.Element {
           tabBarActiveTintColor: '#3fc3e4',
           tabBarInactiveTintColor: '#000',
         }}>
+        {/* @FIXME: 👇 Home, Calendar에 color가 fill이 제대로 전달되지 않음 */}
         <Tab.Screen
           name={ROUTES.HOME}
           component={HomePage}
