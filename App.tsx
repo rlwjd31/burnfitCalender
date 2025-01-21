@@ -12,6 +12,7 @@ import Home from './src/assets/icons/home.svg';
 import Calendar from './src/assets/icons/calendar.svg';
 import Barbell from './src/assets/icons/barbell.svg';
 import User from './src/assets/icons/user.svg';
+// import User from './src/components/icons/User';
 
 const Tab = createBottomTabNavigator();
 
@@ -25,7 +26,6 @@ function App(): React.JSX.Element {
           tabBarActiveTintColor: '#3fc3e4',
           tabBarInactiveTintColor: '#000',
         }}>
-        {/* @FIXME: 👇 Home, Calendar에 color가 fill이 제대로 전달되지 않음 */}
         <Tab.Screen
           name={ROUTES.HOME}
           component={HomePage}
@@ -40,7 +40,12 @@ function App(): React.JSX.Element {
           component={CalendarPage}
           options={{
             tabBarIcon: ({color, size}) => (
-              <Calendar width={size} height={size} fill={color} />
+              <Calendar
+                width={size}
+                height={size}
+                fill={'#fff'}
+                stroke={color}
+              />
             ),
           }}
         />
