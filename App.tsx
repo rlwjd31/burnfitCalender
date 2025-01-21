@@ -1,49 +1,13 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
 
-import {StyleSheet, Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import HomePage from './src/components/pages/Home';
+import CalendarPage from './src/components/pages/Calendar';
+import LibraryPage from './src/components/pages/Library';
+import MyPage from './src/components/pages/MyPage';
 
 const Tab = createBottomTabNavigator();
-
-function HomePage() {
-  return (
-    <View>
-      <Text>HomePage</Text>
-    </View>
-  );
-}
-
-function CalendarPage() {
-  return (
-    <View>
-      <Text>CalendarPage</Text>
-    </View>
-  );
-}
-
-function LibraryPage() {
-  return (
-    <View>
-      <Text>LibraryPage</Text>
-    </View>
-  );
-}
-
-function MyPage() {
-  return (
-    <View>
-      <Text>Message</Text>
-    </View>
-  );
-}
 
 function App(): React.JSX.Element {
   return (
@@ -57,12 +21,5 @@ function App(): React.JSX.Element {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-});
 
 export default App;
