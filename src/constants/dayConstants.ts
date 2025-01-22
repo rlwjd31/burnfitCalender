@@ -11,13 +11,4 @@ dayjs.extend(isTodayPlugin);
 dayjs.extend(LocalizedFormat);
 
 export const now = dayjs().locale({...locale});
-export const weekdaysKO = [
-  '일요일',
-  '월요일',
-  '화요일',
-  '수요일',
-  '목요일',
-  '금요일',
-  '토요일',
-];
-
+export const weekdaysKO = ['Sun', 'Mon', 'Tue', 'Wed', 'THu', 'Fri', 'Sat'];
