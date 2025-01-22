@@ -8,11 +8,7 @@ import CalendarPage from './src/components/pages/Calendar';
 import LibraryPage from './src/components/pages/Library';
 import MyPage from './src/components/pages/MyPage';
 import {ROUTES} from './src/constants/route';
-import Home from './src/assets/icons/home.svg';
-import Calendar from './src/assets/icons/calendar.svg';
-import Barbell from './src/assets/icons/barbell.svg';
-import User from './src/assets/icons/user.svg';
-// import User from './src/components/icons/User';
+import Icon from './src/components/Icon';
 
 const Tab = createBottomTabNavigator();
 
@@ -31,7 +27,7 @@ function App(): React.JSX.Element {
           component={HomePage}
           options={{
             tabBarIcon: ({color, size}) => (
-              <Home width={size} height={size} fill={color} />
+              <Icon iconType="home" width={size} height={size} fill={color} />
             ),
           }}
         />
@@ -40,10 +36,11 @@ function App(): React.JSX.Element {
           component={CalendarPage}
           options={{
             tabBarIcon: ({color, size}) => (
-              <Calendar
+              <Icon
+                iconType="calendar"
                 width={size}
                 height={size}
-                fill={'#fff'}
+                fill="#fff"
                 stroke={color}
               />
             ),
@@ -54,7 +51,12 @@ function App(): React.JSX.Element {
           component={LibraryPage}
           options={{
             tabBarIcon: ({color, size}) => (
-              <Barbell width={size} height={size} fill={color} />
+              <Icon
+                iconType="barbell"
+                width={size}
+                height={size}
+                fill={color}
+              />
             ),
           }}
         />
@@ -63,7 +65,7 @@ function App(): React.JSX.Element {
           component={MyPage}
           options={{
             tabBarIcon: ({color, size}) => (
-              <User width={size} height={size} fill={color} />
+              <Icon iconType="user" width={size} height={size} fill={color} />
             ),
           }}
         />
