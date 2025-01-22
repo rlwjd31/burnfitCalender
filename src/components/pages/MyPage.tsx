@@ -1,15 +1,14 @@
 import React from 'react';
 
-import {Text, View} from 'react-native';
 import Layout from '../../Layout';
-import defaultStyles from '../../styles/defaultStyles.style';
+import { TextTW, ViewTW } from '../common';
 
 export default function MyPage() {
   return (
     <Layout>
-      <View style={defaultStyles.center}>
-        <Text>MyPage</Text>
-      </View>
+      <ViewTW className="h-full items-center justify-center">
+        <TextTW>MyPage</TextTW>
+      </ViewTW>
     </Layout>
   );
 }

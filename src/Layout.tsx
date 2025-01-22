@@ -1,8 +1,7 @@
 import React from 'react';
 
 import {ReactNode} from 'react';
-import {SafeAreaView, View} from 'react-native';
-import defaultStyles from './styles/defaultStyles.style';
+import {SafeAreaViewTW, ViewTW} from './components/common';
 
 type LayoutProps = {
   children: ReactNode;
@@ -10,9 +9,8 @@ type LayoutProps = {
 
 export default function Layout({children}: LayoutProps) {
   return (
-    <SafeAreaView style={defaultStyles.mainContainer}>
-      <View>{children}</View>
-    </SafeAreaView>
+    <SafeAreaViewTW className="flex-1 p-4">
+      <ViewTW>{children}</ViewTW>
+    </SafeAreaViewTW>
   );
 }
-

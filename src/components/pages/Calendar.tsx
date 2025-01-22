@@ -1,15 +1,15 @@
 import React from 'react';
 
-import {Text, View} from 'react-native';
 import Layout from '../../Layout';
-import defaultStyles from '../../styles/defaultStyles.style';
+import { TextTW, ViewTW } from '../common';
+
 
 export default function CalendarPage() {
   return (
     <Layout>
-      <View style={defaultStyles.center}>
-        <Text>Calendar</Text>
-      </View>
+      <ViewTW className="h-full items-center justify-center">
+        <TextTW>Calendar</TextTW>
+      </ViewTW>
     </Layout>
   );
 }
