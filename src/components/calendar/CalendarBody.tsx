@@ -1,12 +1,13 @@
 import React from 'react';
 
-import {Dayjs} from 'dayjs';
 import {getAllDaysInMonth} from '../../libs/dayUtil';
 import {TextTW, ViewTW} from '../common';
 import CalendarDay from './CalendarDay';
+import {useDateContext} from './DateContext';
 
-export default function CalendarBody({nowState}: {nowState: Dayjs}) {
-  const allDaysInMonth = getAllDaysInMonth(nowState);
+export default function CalendarBody() {
+  const {selectedMonth} = useDateContext();
+  const allDaysInMonth = getAllDaysInMonth(selectedMonth);
 
   return (
     <ViewTW>
@@ -15,7 +16,7 @@ export default function CalendarBody({nowState}: {nowState: Dayjs}) {
       </ViewTW>
       <ViewTW className="items-center justify-center">
         {allDaysInMonth.map(week => (
-          <ViewTW key={`${week[0]}`} className="flex-row bg-red w-full">
+          <ViewTW key={`${week[0]}`} className="flex-row w-full">
             {week.map(day => (
               <CalendarDay key={`${day}`} currentDate={day} />
             ))}
