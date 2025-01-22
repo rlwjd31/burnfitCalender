@@ -14,7 +14,7 @@ export default function BottomTabNavigation() {
 
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName={ROUTES.CALENDER}
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: '#3fc3e4',
