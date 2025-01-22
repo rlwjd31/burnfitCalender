@@ -1,8 +1,8 @@
 import {Dayjs} from 'dayjs';
 
-const getAllDaysInMonth = (nowDate: Dayjs) => {
+const getAllDaysInMonth = (nowDate: Dayjs): Dayjs[][] => {
   const DATE_FORMAT = 'YYYY-MM-DD dddd';
-  const monthArr = [];
+  const monthArr: Dayjs[][] = [];
   const startDateOfCurrentMonth = nowDate.startOf('month').clone(); // 현재달의 시작 일
   const startDateOfFirstWeekONCurrentMonth = startDateOfCurrentMonth
     .startOf('week')
@@ -15,10 +15,10 @@ const getAllDaysInMonth = (nowDate: Dayjs) => {
   let currentDate = startDateOfFirstWeekONCurrentMonth.clone();
 
   while (currentDate.isBefore(endDateOfLastWeekOnCurrentMonth)) {
-    let weekArr = [];
+    let weekArr: Dayjs[] = [];
 
     while (weekArr.length < 7) {
-      weekArr.push(currentDate.format(DATE_FORMAT));
+      weekArr.push(currentDate);
       currentDate = currentDate.add(1, 'day');
     }
 
@@ -30,7 +30,7 @@ const getAllDaysInMonth = (nowDate: Dayjs) => {
     let weekArr = [];
 
     while (weekArr.length < 7) {
-      weekArr.push(currentDate.format(DATE_FORMAT));
+      weekArr.push(currentDate);
       currentDate = currentDate.add(1, 'day');
     }
 
