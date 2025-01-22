@@ -3,25 +3,25 @@ import {Dayjs} from 'dayjs';
 import {now} from '../../constants/dayConstants';
 
 interface DateContextType {
-  currentMonth: Dayjs;
-  setCurrentMonth: React.Dispatch<React.SetStateAction<Dayjs>>;
-  currentDate: Dayjs;
-  setCurrentDate: React.Dispatch<React.SetStateAction<Dayjs>>;
+  selectedMonth: Dayjs;
+  setSelectedMonth: React.Dispatch<React.SetStateAction<Dayjs>>;
+  selectedDate: Dayjs;
+  setSelectedDate: React.Dispatch<React.SetStateAction<Dayjs>>;
 }
 
 const DateContext = createContext<DateContextType | undefined>(undefined);
 
 export default function DateProvider({children}: {children: ReactNode}) {
-  const [currentMonth, setCurrentMonth] = useState<Dayjs>(now); // 현재 월
-  const [currentDate, setCurrentDate] = useState<Dayjs>(now); // 현재 날짜
+  const [selectedMonth, setSelectedMonth] = useState<Dayjs>(now); // 현재 선택된 달
+  const [selectedDate, setSelectedDate] = useState<Dayjs>(now); // 현재 선택된 날
 
   return (
     <DateContext.Provider
       value={{
-        currentMonth,
-        setCurrentMonth,
-        currentDate,
-        setCurrentDate,
+        selectedMonth,
+        setSelectedMonth,
+        selectedDate,
+        setSelectedDate,
       }}>
       {children}
     </DateContext.Provider>
