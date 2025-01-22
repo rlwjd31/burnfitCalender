@@ -1,9 +1,10 @@
 import React from 'react';
 
 import {getAllDaysInMonth} from '../../libs/dayUtil';
-import {TextTW, ViewTW} from '../common';
+import {ViewTW} from '../common';
 import CalendarDay from './CalendarDay';
 import {useDateContext} from './DateContext';
+import DayNameSection from './DayNameSection';
 
 export default function CalendarBody() {
   const {selectedMonth} = useDateContext();
@@ -11,9 +12,7 @@ export default function CalendarBody() {
 
   return (
     <ViewTW>
-      <ViewTW className="items-center bg-orange-200">
-        <TextTW>요일 section</TextTW>
-      </ViewTW>
+      <DayNameSection />
       <ViewTW className="items-center justify-center">
         {allDaysInMonth.map(week => (
           <ViewTW key={`${week[0]}`} className="flex-row w-full">
