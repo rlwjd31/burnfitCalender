@@ -1,20 +1,35 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import Layout from '../../Layout';
 import {ViewTW} from '../common';
 import CalendarHeader from '../calendar/CalendarHeader';
 import CalendarBody from '../calendar/CalendarBody';
-import DateProvider from '../calendar/DateContext';
+import DateProvider, {useDateContext} from '../calendar/DateContext';
+import {Dayjs} from 'dayjs';
 
-export default function CalendarPage() {
+function Calendar({currentDate}: {currentDate: Dayjs}) {
+  const {setSelectedMonth} = useDateContext();
+
+  useEffect(() => {
+    if (currentDate) {
+      setSelectedMonth(currentDate);
+    }
+  }, [setSelectedMonth, currentDate]);
+
   return (
     <Layout>
-      <DateProvider>
-        <ViewTW>
-          <CalendarHeader />
-          <CalendarBody />
-        </ViewTW>
-      </DateProvider>
+      <ViewTW>
+        <CalendarHeader />
+        <CalendarBody />
+      </ViewTW>
     </Layout>
+  );
+}
+
+export default function CalendarPage({currentDate}: {currentDate: Dayjs}) {
+  return (
+    <DateProvider>
+      <Calendar currentDate={currentDate} />
+    </DateProvider>
   );
 }
