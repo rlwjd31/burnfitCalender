@@ -4,12 +4,16 @@ import Home from '../assets/icons/home.svg';
 import Calendar from '../assets/icons/calendar.svg';
 import Barbell from '../assets/icons/barbell.svg';
 import User from '../assets/icons/user.svg';
+import ArrowLeft from '../assets/icons/arrow-left.svg';
+import ArrowRight from '../assets/icons/arrow-right.svg';
 
 const IconComponent = {
   home: Home,
   calendar: Calendar,
   barbell: Barbell,
   user: User,
+  arrowLeft: ArrowLeft,
+  arrowRight: ArrowRight,
 };
 
 type IconProps = {
