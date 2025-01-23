@@ -10,7 +10,7 @@ type LayoutProps = {
 export default function Layout({children}: LayoutProps) {
   return (
     <SafeAreaViewTW className="flex-1 bg-white">
-      <ViewTW className="px-2">{children}</ViewTW>
+      <ViewTW className="h-full px-2">{children}</ViewTW>
     </SafeAreaViewTW>
   );
 }
